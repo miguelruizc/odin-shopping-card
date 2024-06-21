@@ -1,2 +1,2 @@
-# odin-shopping-card
-Shopping Card Project for The Odin Project
+# Awesome Fake-Shop Application
+Shopping Cart project for The Odin Project 
