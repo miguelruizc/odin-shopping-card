@@ -3,6 +3,7 @@ import Home from './Home.jsx';
 import Shop from './Shop.jsx';
 import Cart from './Cart.jsx';
 import Nav from './Nav.jsx';
+import Footer from './Footer.jsx';
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path="/shop" element={<Shop />}></Route>
 					<Route path="/cart" element={<Cart />}></Route>
 				</Routes>
+				<Footer />
 			</Router>
 		</div>
 	);
