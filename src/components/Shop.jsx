@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Shop = () => {
+const Shop = ({ cart, setCart }) => {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
@@ -10,7 +10,6 @@ const Shop = () => {
 				return res.json();
 			})
 			.then((json) => {
-				console.log(json);
 				setItems(json);
 			})
 			.catch((err) => console.log(err));
@@ -18,16 +17,22 @@ const Shop = () => {
 
 	const addToCart = (event, itemId) => {
 		event.preventDefault();
-		console.log(`Item submited to cart, info:`);
-		console.log(`Quantity: ${event.target.elements['quantity'].value}`);
-		console.log(`Item ID: ${itemId}`);
+
+		const item = items.find((obj) => obj.id === itemId);
+		const newCartItem = {
+			id: item.id,
+			title: item.title,
+			price: item.price,
+			image: item.image,
+			quantity: parseInt(event.target.elements['quantity'].value),
+		};
+
+		setCart((state) => [...state, newCartItem]);
 
 		event.target.reset();
 	};
 
 	const itemsList = items.map((element) => {
-		console.log(element);
-
 		return (
 			<div className="shopItem" key={element.id}>
 				<h2>{element.title}</h2>
