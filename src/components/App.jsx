@@ -8,7 +8,7 @@ import ErrorPage from './ErrorPage.jsx';
 
 function App() {
 	return (
-		<div>
+		<>
 			<Router>
 				<Nav />
 				<Routes>
@@ -19,7 +19,7 @@ function App() {
 				</Routes>
 				<Footer />
 			</Router>
-		</div>
+		</>
 	);
 }
 
