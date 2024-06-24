@@ -16,6 +16,15 @@ const Shop = () => {
 			.catch((err) => console.log(err));
 	}, []);
 
+	const addToCart = (event, itemId) => {
+		event.preventDefault();
+		console.log(`Item submited to cart, info:`);
+		console.log(`Quantity: ${event.target.elements['quantity'].value}`);
+		console.log(`Item ID: ${itemId}`);
+
+		event.target.reset();
+	};
+
 	const itemsList = items.map((element) => {
 		console.log(element);
 
@@ -30,8 +39,20 @@ const Shop = () => {
 					Rating: {element.rating.rate} Reviews: {element.rating.count}
 				</p>
 
-				<form action="shopItemForm">
-					<input type="number" min="1" placeholder={1} />
+				<form
+					action="shopItemForm"
+					onSubmit={(event) => {
+						addToCart(event, element.id);
+					}}
+				>
+					<input
+						id={element.id}
+						name="quantity"
+						type="number"
+						min="1"
+						placeholder="1"
+						required
+					/>
 					<button type="submit">Add to cart</button>
 				</form>
 			</div>
