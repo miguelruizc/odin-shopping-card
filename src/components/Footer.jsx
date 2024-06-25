@@ -15,9 +15,6 @@ const Footer = ({ balance, setBalance }) => {
 		const inputValue = parseFloat(event.target.elements[0].value);
 		const amount = isNaN(inputValue) ? 0 : inputValue;
 
-		console.log(inputValue);
-		console.log(amount);
-
 		setBalance(balance + amount);
 		setAddingBalance(false);
 

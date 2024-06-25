@@ -269,3 +269,19 @@ input[type='number']::-webkit-outer-spin-button {
 .footer input {
 	text-align: center;
 }
+
+@media screen and (max-width: 450px) {
+	.footerContent {
+		align-items: center;
+	}
+	.addBalanceForm {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.addBalanceForm input {
+		max-width: 150px;
+	}
+}

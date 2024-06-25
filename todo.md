@@ -9,3 +9,5 @@ done:
 
 todo:
 -Mobile layout
+-Add balance input
+-Publish
