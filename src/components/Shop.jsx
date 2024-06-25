@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Shop = ({ cart, setCart }) => {
+const Shop = ({ setCart }) => {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
@@ -82,6 +83,10 @@ const Shop = ({ cart, setCart }) => {
 			{itemsList}
 		</div>
 	);
+};
+
+Shop.propTypes = {
+	setCart: PropTypes.func.isRequired,
 };
 
 export default Shop;

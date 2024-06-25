@@ -18,7 +18,17 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />}></Route>
 					<Route path="/shop" element={<Shop cart={cart} setCart={setCart} />}></Route>
-					<Route path="/cart" element={<Cart cart={cart} setCart={setCart} />}></Route>
+					<Route
+						path="/cart"
+						element={
+							<Cart
+								cart={cart}
+								setCart={setCart}
+								balance={balance}
+								setBalance={setBalance}
+							/>
+						}
+					></Route>
 					<Route path="/*" element={<ErrorPage />}></Route>
 				</Routes>
 				<Footer balance={balance} />

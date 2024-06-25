@@ -1,4 +1,6 @@
-const Cart = ({ cart, setCart }) => {
+import PropTypes from 'prop-types';
+
+const Cart = ({ cart, setCart, balance, setBalance }) => {
 	const handleQuantityChange = (event, id) => {
 		const newQuant = event.target.value;
 
@@ -64,6 +66,13 @@ const Cart = ({ cart, setCart }) => {
 			{cartList}
 		</div>
 	);
+};
+
+Cart.propTypes = {
+	cart: PropTypes.array.isRequired,
+	setCart: PropTypes.func.isRequired,
+	balance: PropTypes.number.isRequired,
+	setBalance: PropTypes.func.isRequired,
 };
 
 export default Cart;
