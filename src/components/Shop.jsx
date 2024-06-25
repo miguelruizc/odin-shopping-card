@@ -18,16 +18,28 @@ const Shop = ({ cart, setCart }) => {
 	const addToCart = (event, itemId) => {
 		event.preventDefault();
 
+		const quantity = parseInt(event.target.elements['quantity'].value);
+
 		const item = items.find((obj) => obj.id === itemId);
 		const newCartItem = {
 			id: item.id,
 			title: item.title,
 			price: item.price,
 			image: item.image,
-			quantity: parseInt(event.target.elements['quantity'].value),
+			quantity: quantity,
 		};
 
-		setCart((state) => [...state, newCartItem]);
+		setCart((state) => {
+			//Check if another item with same id existed in cart, so that it only updates quantity
+			let index = state.findIndex((obj) => obj.id === itemId);
+			if (index !== -1) {
+				let newItem = state[index];
+				newItem.quantity += quantity;
+				let newState = [...state];
+				newState[index] = newItem;
+				return newState;
+			} else return [...state, newCartItem];
+		});
 
 		event.target.reset();
 	};
