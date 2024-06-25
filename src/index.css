@@ -5,8 +5,8 @@
 }
 
 #root {
-	height: 100vh;
-	height: 100svh;
+	min-height: 100vh;
+	min-height: 100svh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -42,6 +42,10 @@ a {
 	color: white;
 
 	display: flex;
+
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 .shopItem {
