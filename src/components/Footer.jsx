@@ -34,7 +34,7 @@ const Footer = ({ balance, setBalance }) => {
 				)}
 				{addingBalance && (
 					<form className="addBalanceForm" onSubmit={addBalanceSubmit}>
-						<input type="number" placeholder="how much to add..." min={1}></input>
+						<input type="number" placeholder="Amount..." min={1}></input>
 						<button type="submit">Submit</button>
 					</form>
 				)}

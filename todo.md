@@ -6,8 +6,10 @@ done:
 -Fix double history entries bug
 -Fix usd format so is always $69,420.99
 -Fix footer blocking content behind (solved with position sticky)
+-Mobile lauout:Add balance input
 
 todo:
--Mobile layout
--Add balance input
+-Mobile layout: Add smaller fonts for small screens
+-Modify inputs so that only update on input, not on change (so removing all digits don't equate to 0)
+
 -Publish

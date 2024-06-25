@@ -270,7 +270,32 @@ input[type='number']::-webkit-outer-spin-button {
 	text-align: center;
 }
 
+@media screen and (max-width: 550px) {
+	.shopItem,
+	.cartItem,
+	.historyItem {
+		flex-direction: column;
+	}
+
+	.shopItem h2,
+	.shopItem p,
+	.cartItem h2,
+	.historyItem * {
+		overflow-wrap: break-word;
+	}
+}
+
 @media screen and (max-width: 450px) {
+	.shopItem h2,
+	.shopItem p,
+	.cartItem h2,
+	.historyItem * {
+		word-break: break-all;
+	}
+
+	.footer button {
+		margin-left: 0;
+	}
 	.footerContent {
 		align-items: center;
 	}
@@ -282,6 +307,6 @@ input[type='number']::-webkit-outer-spin-button {
 	}
 
 	.addBalanceForm input {
-		max-width: 150px;
+		max-width: 80px;
 	}
 }
