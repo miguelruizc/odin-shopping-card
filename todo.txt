@@ -1,0 +1,7 @@
+-Cart styles
+-History style
+-Footer style
+-Fix footer blocking content behind
+-Mobile layout
+-Fix home width
+

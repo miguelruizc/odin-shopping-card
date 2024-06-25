@@ -19,7 +19,10 @@ const Shop = ({ setCart }) => {
 	const addToCart = (event, itemId) => {
 		event.preventDefault();
 
-		const quantity = parseInt(event.target.elements['quantity'].value);
+		let formValue = event.target.elements['quantity'].value;
+		if (formValue === '') formValue = 1;
+
+		const quantity = parseInt(formValue);
 
 		const item = items.find((obj) => obj.id === itemId);
 		const newCartItem = {
@@ -65,7 +68,6 @@ const Shop = ({ setCart }) => {
 									min="1"
 									max="99"
 									placeholder="1"
-									required
 								/>
 							</div>
 							<button type="submit">Add to cart</button>
@@ -74,7 +76,7 @@ const Shop = ({ setCart }) => {
 				</div>
 				<div className="shopItemRight">
 					<h2>{element.title}</h2>
-					<h3>{element.price}$</h3>
+					<h3>${element.price}</h3>
 					<hr />
 					<div className="shopItemInfo">
 						<p>

@@ -67,32 +67,44 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	const cartList = cart.map((element) => {
 		return (
 			<div key={element.id} className="cartItem card">
-				<h2>{element.title}</h2>
-				<p>{element.price}</p>
-				<img src={element.image} alt="Image of item" />
-				<p>
-					Quantity:
-					<input
-						type="number"
-						value={element.quantity}
-						onChange={(event) => handleQuantityChange(event, element.id)}
-					/>
-				</p>
-				<p>Total: {element.price * element.quantity}</p>
-				<button
-					onClick={() => {
-						handleRemove(element.id);
-					}}
-				>
-					remove
-				</button>
-				<button
-					onClick={() => {
-						handleBuy(element.id);
-					}}
-				>
-					buy
-				</button>
+				<div className="cartItemLeft">
+					<img src={element.image} alt="Image of item" />
+				</div>
+				<div className="cartItemRight">
+					<h2>{element.title}</h2>
+					<h3>${element.price}</h3>
+					<hr />
+					<div className="cartItemQuantityDiv">
+						<label htmlFor="cartItemQuantity">Quantity:</label>
+						<input
+							name="cartItemQuantity"
+							type="number"
+							value={element.quantity}
+							onChange={(event) => handleQuantityChange(event, element.id)}
+						/>
+						<button
+							className="removeButton"
+							onClick={() => {
+								handleRemove(element.id);
+							}}
+						>
+							remove
+						</button>
+					</div>
+
+					<div className="cartItemCheckout">
+						<button
+							onClick={() => {
+								handleBuy(element.id);
+							}}
+						>
+							Buy
+						</button>
+						<p>
+							Total: <strong>${element.price * element.quantity}</strong>
+						</p>
+					</div>
+				</div>
 			</div>
 		);
 	});
@@ -111,10 +123,10 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 
 	return (
 		<div className="content cart">
+			<h1>Cart</h1>
 			<div className="cart-section">
-				<h1>Cart</h1>
 				{cart.length > 0 && cartList}
-				{cart.length === 0 && <p>Cart is empty, go add stuff </p>}
+				{cart.length === 0 && <p>Cart is empty </p>}
 			</div>
 			{history.length > 0 && (
 				<div className="history-section">

@@ -49,7 +49,8 @@ a {
 	color: white;
 }
 
-.content {
+.content,
+.cart-section {
 	width: 100%;
 
 	background-color: rgb(255, 255, 255);
@@ -64,16 +65,13 @@ a {
 	padding: 16px;
 }
 
-.content * {
+.content > * {
 	width: 100%;
 	max-width: 700px;
 }
 
-.content p {
+.homePara {
 	padding: 8px;
-}
-.card p {
-	padding: 0px;
 }
 
 hr {
@@ -129,7 +127,8 @@ input[type='number']::-webkit-outer-spin-button {
 	width: 100%;
 }
 
-.shopItem {
+.shopItem,
+.cartItem {
 	background-color: rgb(255, 255, 255);
 	color: #272727;
 	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
@@ -141,7 +140,8 @@ input[type='number']::-webkit-outer-spin-button {
 	align-items: center;
 }
 
-.shopItemLeft {
+.shopItemLeft,
+.cartItemLeft {
 	flex: 0;
 	display: flex;
 	flex-direction: column;
@@ -155,7 +155,8 @@ input[type='number']::-webkit-outer-spin-button {
 	flex-direction: column;
 }
 
-.shopItemRight {
+.shopItemRight,
+.cartItemRight {
 	flex: 1;
 
 	display: flex;
@@ -167,6 +168,43 @@ input[type='number']::-webkit-outer-spin-button {
 .cartItem img {
 	width: 100px;
 	max-width: 100px;
+}
+
+.cartItem {
+	display: flex;
+}
+
+.cartItemQuantityDiv {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.cartItem input {
+	width: 50px;
+	text-align: center;
+}
+
+.removeButton {
+	padding: 0 8px;
+}
+
+.cartItemCheckout {
+	display: flex;
+	margin-top: 16px;
+	align-items: center;
+	gap: 16px;
+}
+
+.cartItemCheckout p {
+	padding: 8px;
+	outline: 1px solid rgb(255, 98, 98);
+}
+
+.cartItemCheckout button {
+	max-width: fit-content;
+	padding-right: 32px;
+	padding-left: 32px;
 }
 
 .historyItem img {

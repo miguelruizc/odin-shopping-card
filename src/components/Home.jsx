@@ -7,11 +7,23 @@ const Home = () => {
 		<div className="content">
 			<h1>Home</h1>
 			<img className="homeImage" src={homeImage} alt="Store" />
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit earum, tenetur tempore dignissimos iure.</p>
+			<p className="homePara">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui
+				ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit
+				earum, tenetur tempore dignissimos iure.
+			</p>
 			<img className="homeImage" src={homeImage2} alt="Store" />
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit earum, tenetur tempore dignissimos iure.</p>
+			<p className="homePara">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui
+				ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit
+				earum, tenetur tempore dignissimos iure.
+			</p>
 			<img className="homeImage" src={homeImage3} alt="Store" />
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit earum, tenetur tempore dignissimos iure.</p>
+			<p className="homePara">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, ratione nihil qui
+				ab optio, atque expedita aperiam ex, eum neque dolore. Ipsum non vitae suscipit
+				earum, tenetur tempore dignissimos iure.
+			</p>
 		</div>
 	);
 };
