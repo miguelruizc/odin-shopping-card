@@ -48,31 +48,34 @@ const Shop = ({ setCart }) => {
 	const itemsList = items.map((element) => {
 		return (
 			<div className="shopItem" key={element.id}>
-				<h2>{element.title}</h2>
-				<h3>{element.price}$</h3>
-				<p>Category: {element.category}</p>
-				<p>{element.description}</p>
-				<img src={element.image} alt="item picture" />
-				<p>
-					Rating: {element.rating.rate} Reviews: {element.rating.count}
-				</p>
-
-				<form
-					action="shopItemForm"
-					onSubmit={(event) => {
-						addToCart(event, element.id);
-					}}
-				>
-					<input
-						id={element.id}
-						name="quantity"
-						type="number"
-						min="1"
-						placeholder="1"
-						required
-					/>
-					<button type="submit">Add to cart</button>
-				</form>
+				<div className="shopItemLeft">
+					<img src={element.image} alt="item picture" />
+				</div>
+				<div className="shopItemRight">
+					<h2>{element.title}</h2>
+					<h3>{element.price}$</h3>
+					<p>Category: {element.category}</p>
+					<p>{element.description}</p>
+					<p>
+						Rating: {element.rating.rate} Reviews: {element.rating.count}
+					</p>
+					<form
+						action="shopItemForm"
+						onSubmit={(event) => {
+							addToCart(event, element.id);
+						}}
+					>
+						<input
+							id={element.id}
+							name="quantity"
+							type="number"
+							min="1"
+							placeholder="1"
+							required
+						/>
+						<button type="submit">Add to cart</button>
+					</form>
+				</div>
 			</div>
 		);
 	});
