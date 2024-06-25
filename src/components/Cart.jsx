@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
 const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	const handleQuantityChange = (event, id) => {
@@ -54,8 +55,9 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 			quantity: cartItem.quantity,
 			total: total,
 			image: cartItem.image,
-			id: cartItem.id,
+			id: uuidv4(),
 		};
+
 		setHistory([newPurchase, ...history]);
 
 		// Remove item from cart
