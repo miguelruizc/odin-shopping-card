@@ -67,6 +67,11 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	};
 
 	const cartList = cart.map((element) => {
+		const formatedTotal = new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+		}).format(element.price * element.quantity);
+
 		return (
 			<div key={element.id} className="cartItem card">
 				<div className="cartItemLeft">
@@ -103,7 +108,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 							Buy
 						</button>
 						<p>
-							Total: <strong>${element.price * element.quantity}</strong>
+							Total: <strong>{formatedTotal}</strong>
 						</p>
 					</div>
 				</div>
@@ -112,6 +117,11 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	});
 
 	const historyList = history.map((element) => {
+		const formatedTotal = new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+		}).format(element.price * element.quantity);
+
 		return (
 			<div key={element.id} className="historyItem">
 				<div className="historyItemLeft">
@@ -122,7 +132,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 						{element.title} (x{element.quantity}) - ${element.price}
 					</h3>
 					<p>
-						Total: <strong>${element.price * element.quantity}</strong>
+						Total: <strong>{formatedTotal}</strong>
 					</p>
 				</div>
 			</div>

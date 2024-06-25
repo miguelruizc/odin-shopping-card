@@ -26,20 +26,22 @@ const Footer = ({ balance, setBalance }) => {
 
 	return (
 		<div className="footer">
-			<p>
-				Balance: <strong>{formatedBalance} </strong>
-			</p>
-			{!addingBalance && (
-				<span className="addBalanceButton" onClick={() => setAddingBalance(true)}>
-					(Add)
-				</span>
-			)}
-			{addingBalance && (
-				<form className="addBalanceForm" onSubmit={addBalanceSubmit}>
-					<input type="number" placeholder="how much to add..." min={1}></input>
-					<button type="submit">Submit</button>
-				</form>
-			)}
+			<div className="footerContent">
+				<p>
+					Balance: <strong>{formatedBalance} </strong>
+				</p>
+				{!addingBalance && (
+					<span className="addBalanceButton" onClick={() => setAddingBalance(true)}>
+						(Add)
+					</span>
+				)}
+				{addingBalance && (
+					<form className="addBalanceForm" onSubmit={addBalanceSubmit}>
+						<input type="number" placeholder="how much to add..." min={1}></input>
+						<button type="submit">Submit</button>
+					</form>
+				)}
+			</div>
 		</div>
 	);
 };
