@@ -1,9 +1,10 @@
 done:
 -Cart styles
 -History style
+-Footer style
+-Fix home width
 
 todo:
--Footer style
+
 -Fix footer blocking content behind
 -Mobile layout
--Fix home width

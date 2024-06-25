@@ -112,7 +112,6 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .homeImage {
-	width: 100vw;
 	max-width: 700px;
 }
 
