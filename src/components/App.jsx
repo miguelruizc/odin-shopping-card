@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 function App() {
 	const [cart, setCart] = useState([]);
+	const [balance, setBalance] = useState(10000);
 
 	return (
 		<>
@@ -20,7 +21,7 @@ function App() {
 					<Route path="/cart" element={<Cart cart={cart} setCart={setCart} />}></Route>
 					<Route path="/*" element={<ErrorPage />}></Route>
 				</Routes>
-				<Footer />
+				<Footer balance={balance} />
 			</Router>
 		</>
 	);

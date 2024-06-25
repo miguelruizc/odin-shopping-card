@@ -1,7 +1,12 @@
-const Footer = () => {
+const Footer = ({ balance }) => {
+	const formatedBalance = new Intl.NumberFormat('en-US', {
+		style: 'currency',
+		currency: 'USD',
+	}).format(balance);
+
 	return (
 		<div className="footer">
-			<p>This is a footer</p>
+			<p>Balance: {formatedBalance}$</p>
 		</div>
 	);
 };
