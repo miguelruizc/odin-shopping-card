@@ -47,34 +47,42 @@ const Shop = ({ setCart }) => {
 
 	const itemsList = items.map((element) => {
 		return (
-			<div className="shopItem" key={element.id}>
+			<div className="shopItem card" key={element.id}>
 				<div className="shopItemLeft">
 					<img src={element.image} alt="item picture" />
+					<div className="shopItemForm">
+						<form
+							onSubmit={(event) => {
+								addToCart(event, element.id);
+							}}
+						>
+							<div className="quantityInput">
+								<label htmlFor="quantity">Quantity:</label>
+								<input
+									id={element.id}
+									name="quantity"
+									type="number"
+									min="1"
+									max="99"
+									placeholder="1"
+									required
+								/>
+							</div>
+							<button type="submit">Add to cart</button>
+						</form>
+					</div>
 				</div>
 				<div className="shopItemRight">
 					<h2>{element.title}</h2>
 					<h3>{element.price}$</h3>
-					<p>Category: {element.category}</p>
-					<p>{element.description}</p>
-					<p>
-						Rating: {element.rating.rate} Reviews: {element.rating.count}
-					</p>
-					<form
-						action="shopItemForm"
-						onSubmit={(event) => {
-							addToCart(event, element.id);
-						}}
-					>
-						<input
-							id={element.id}
-							name="quantity"
-							type="number"
-							min="1"
-							placeholder="1"
-							required
-						/>
-						<button type="submit">Add to cart</button>
-					</form>
+					<hr />
+					<div className="shopItemInfo">
+						<p>
+							Rating: {element.rating.rate} Reviews: {element.rating.count}
+						</p>
+						<p>Category: {element.category}</p>
+						<p>{element.description}</p>
+					</div>
 				</div>
 			</div>
 		);

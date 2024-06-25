@@ -66,7 +66,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 
 	const cartList = cart.map((element) => {
 		return (
-			<div key={element.id} className="cartItem">
+			<div key={element.id} className="cartItem card">
 				<h2>{element.title}</h2>
 				<p>{element.price}</p>
 				<img src={element.image} alt="Image of item" />
