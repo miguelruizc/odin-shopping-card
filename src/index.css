@@ -40,6 +40,8 @@ a {
 .footer {
 	background-color: rgb(56, 56, 56);
 	color: white;
+
+	display: flex;
 }
 
 .shopItem {

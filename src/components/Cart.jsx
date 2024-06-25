@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
-const Cart = ({ cart, setCart, balance, setBalance }) => {
-	const [history, setHistory] = useState([]);
-
+const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	const handleQuantityChange = (event, id) => {
 		const newQuant = event.target.value;
 
@@ -57,6 +54,7 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 			quantity: cartItem.quantity,
 			total: total,
 			image: cartItem.image,
+			id: cartItem.id,
 		};
 		setHistory([...history, newPurchase]);
 
@@ -115,7 +113,8 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 		<div className="content cart">
 			<div className="cart-section">
 				<h1>Cart</h1>
-				{cartList}
+				{cart.length > 0 && cartList}
+				{cart.length === 0 && <p>Cart is empty, go add stuff </p>}
 			</div>
 			{history.length > 0 && (
 				<div className="history-section">
@@ -132,6 +131,8 @@ Cart.propTypes = {
 	setCart: PropTypes.func.isRequired,
 	balance: PropTypes.number.isRequired,
 	setBalance: PropTypes.func.isRequired,
+	history: PropTypes.array.isRequired,
+	setHistory: PropTypes.func.isRequired,
 };
 
 export default Cart;

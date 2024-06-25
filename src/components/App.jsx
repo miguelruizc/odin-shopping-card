@@ -10,6 +10,7 @@ import { useState } from 'react';
 function App() {
 	const [cart, setCart] = useState([]);
 	const [balance, setBalance] = useState(10000);
+	const [history, setHistory] = useState([]);
 
 	return (
 		<>
@@ -26,12 +27,14 @@ function App() {
 								setCart={setCart}
 								balance={balance}
 								setBalance={setBalance}
+								history={history}
+								setHistory={setHistory}
 							/>
 						}
 					></Route>
 					<Route path="/*" element={<ErrorPage />}></Route>
 				</Routes>
-				<Footer balance={balance} />
+				<Footer balance={balance} setBalance={setBalance} />
 			</Router>
 		</>
 	);
