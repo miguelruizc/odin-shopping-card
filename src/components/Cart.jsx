@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const Cart = ({ cart, setCart, balance, setBalance }) => {
+	const [history, setHistory] = useState([]);
+
 	const handleQuantityChange = (event, id) => {
 		const newQuant = event.target.value;
 
@@ -86,10 +89,27 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 		);
 	});
 
+	const historyList = history.map((element) => {
+		return (
+			<div key={element.id} className="cartItem">
+				<h2>{element.title}</h2>
+				<p>{element.price}</p>
+				<p>Quantity: {element.quantity}</p>
+				<p>Total: {element.price * element.quantity}</p>
+			</div>
+		);
+	});
+
 	return (
 		<div className="content">
 			<h1>Cart</h1>
 			{cartList}
+			{history.length > 0 && (
+				<>
+					<h2>History</h2>
+					{historyList}
+				</>
+			)}
 		</div>
 	);
 };
