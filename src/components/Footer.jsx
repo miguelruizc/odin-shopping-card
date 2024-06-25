@@ -28,7 +28,7 @@ const Footer = ({ balance, setBalance }) => {
 					<button type="submit">Submit</button>
 				</form>
 			)}
-			<p>Balance: {formatedBalance}$</p>
+			<p>Balance: {formatedBalance}</p>
 		</div>
 	);
 };
