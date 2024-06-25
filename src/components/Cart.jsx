@@ -1,9 +1,6 @@
 const Cart = ({ cart, setCart }) => {
 	const handleQuantityChange = (event, id) => {
-		console.log('quantity input onChange trigger');
 		const newQuant = event.target.value;
-
-		console.log(`New quant: ${newQuant}`);
 
 		setCart((state) => {
 			let index = state.findIndex((obj) => obj.id === id);
@@ -19,7 +16,17 @@ const Cart = ({ cart, setCart }) => {
 				newState[index] = newObject;
 			}
 
-			console.log(newState);
+			return newState;
+		});
+	};
+
+	const handleRemove = (id) => {
+		setCart((state) => {
+			let index = state.findIndex((obj) => obj.id === id);
+			let newState = [...state];
+
+			newState.splice(index, 1);
+
 			return newState;
 		});
 	};
@@ -39,7 +46,13 @@ const Cart = ({ cart, setCart }) => {
 					/>
 				</p>
 				<p>Total: {element.price * element.quantity}</p>
-				<button>remove</button>
+				<button
+					onClick={() => {
+						handleRemove(element.id);
+					}}
+				>
+					remove
+				</button>
 				<button>buy</button>
 			</div>
 		);
