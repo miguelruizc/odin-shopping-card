@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Footer = ({ balance }) => {
+const Footer = ({ balance = 10000 }) => {
 	const formatedBalance = new Intl.NumberFormat('en-US', {
 		style: 'currency',
 		currency: 'USD',
@@ -15,10 +15,6 @@ const Footer = ({ balance }) => {
 
 Footer.propTypes = {
 	balance: PropTypes.number,
-};
-
-Footer.defaultProps = {
-	balance: 5000,
 };
 
 export default Footer;

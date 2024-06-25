@@ -33,6 +33,26 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 		});
 	};
 
+	const handleBuy = (id) => {
+		const index = cart.findIndex((element) => element.id === id);
+		const cartItem = cart[index];
+		const total = cartItem.quantity * cartItem.price;
+
+		// Check if total < balance
+		if (total > balance) {
+			alert('Insuficient balance');
+			return;
+		}
+
+		// Remove total from balance
+		setBalance(balance - total);
+
+		// Remove item from cart
+		let newCart = [...cart];
+		newCart.splice(index, 1);
+		setCart(newCart);
+	};
+
 	const cartList = cart.map((element) => {
 		return (
 			<div key={element.id} className="cartItem">
@@ -55,7 +75,13 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 				>
 					remove
 				</button>
-				<button>buy</button>
+				<button
+					onClick={() => {
+						handleBuy(element.id);
+					}}
+				>
+					buy
+				</button>
 			</div>
 		);
 	});
