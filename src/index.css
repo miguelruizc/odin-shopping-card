@@ -54,3 +54,12 @@ a {
 .shopItem input {
 	width: 2.5rem;
 }
+
+.historyItem img {
+	max-width: 50px;
+}
+
+.content.cart {
+	height: 100%;
+	justify-content: space-between;
+}

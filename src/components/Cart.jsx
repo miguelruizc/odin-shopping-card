@@ -50,6 +50,16 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 		// Remove total from balance
 		setBalance(balance - total);
 
+		// Add purchase to history
+		const newPurchase = {
+			title: cartItem.title,
+			price: cartItem.price,
+			quantity: cartItem.quantity,
+			total: total,
+			image: cartItem.image,
+		};
+		setHistory([...history, newPurchase]);
+
 		// Remove item from cart
 		let newCart = [...cart];
 		newCart.splice(index, 1);
@@ -91,7 +101,8 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 
 	const historyList = history.map((element) => {
 		return (
-			<div key={element.id} className="cartItem">
+			<div key={element.id} className="historyItem">
+				<img src={element.image} alt="Item image" />
 				<h2>{element.title}</h2>
 				<p>{element.price}</p>
 				<p>Quantity: {element.quantity}</p>
@@ -101,14 +112,16 @@ const Cart = ({ cart, setCart, balance, setBalance }) => {
 	});
 
 	return (
-		<div className="content">
-			<h1>Cart</h1>
-			{cartList}
+		<div className="content cart">
+			<div className="cart-section">
+				<h1>Cart</h1>
+				{cartList}
+			</div>
 			{history.length > 0 && (
-				<>
+				<div className="history-section">
 					<h2>History</h2>
 					{historyList}
-				</>
+				</div>
 			)}
 		</div>
 	);
