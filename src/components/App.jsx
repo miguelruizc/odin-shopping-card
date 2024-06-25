@@ -15,7 +15,7 @@ function App() {
 	return (
 		<>
 			<Router>
-				<Nav />
+				<Nav cart={cart} />
 				<Routes>
 					<Route path="/" element={<Home />}></Route>
 					<Route path="/shop" element={<Shop cart={cart} setCart={setCart} />}></Route>
