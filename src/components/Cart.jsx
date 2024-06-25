@@ -56,7 +56,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 			image: cartItem.image,
 			id: cartItem.id,
 		};
-		setHistory([...history, newPurchase]);
+		setHistory([newPurchase, ...history]);
 
 		// Remove item from cart
 		let newCart = [...cart];
