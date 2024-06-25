@@ -40,7 +40,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 
 		// Check if total < balance
 		if (total > balance) {
-			alert('Insuficient balance');
+			alert('Insufficient balance');
 			return;
 		}
 

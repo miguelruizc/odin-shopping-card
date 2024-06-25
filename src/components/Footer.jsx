@@ -12,7 +12,12 @@ const Footer = ({ balance, setBalance }) => {
 	const addBalanceSubmit = (event) => {
 		event.preventDefault();
 
-		const amount = parseFloat(event.target.elements[0].value);
+		const inputValue = parseFloat(event.target.elements[0].value);
+		const amount = isNaN(inputValue) ? 0 : inputValue;
+
+		console.log(inputValue);
+		console.log(amount);
+
 		setBalance(balance + amount);
 		setAddingBalance(false);
 
@@ -21,14 +26,20 @@ const Footer = ({ balance, setBalance }) => {
 
 	return (
 		<div className="footer">
-			{!addingBalance && <button onClick={() => setAddingBalance(true)}>+</button>}
+			<p>
+				Balance: <strong>{formatedBalance} </strong>
+			</p>
+			{!addingBalance && (
+				<span className="addBalanceButton" onClick={() => setAddingBalance(true)}>
+					(Add)
+				</span>
+			)}
 			{addingBalance && (
 				<form className="addBalanceForm" onSubmit={addBalanceSubmit}>
-					<input type="number" placeholder="how much to add..."></input>
+					<input type="number" placeholder="how much to add..." min={1}></input>
 					<button type="submit">Submit</button>
 				</form>
 			)}
-			<p>Balance: {formatedBalance}</p>
 		</div>
 	);
 };
