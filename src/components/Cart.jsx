@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	const handleQuantityChange = (event, id) => {
 		const newQuant = event.target.value;
+		if (newQuant === '') return;
 
 		setCart((state) => {
 			let index = state.findIndex((obj) => obj.id === id);
@@ -87,7 +88,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 							name="cartItemQuantity"
 							type="number"
 							value={element.quantity}
-							onChange={(event) => handleQuantityChange(event, element.id)}
+							onInput={(event) => handleQuantityChange(event, element.id)}
 						/>
 						<button
 							className="removeButton"
