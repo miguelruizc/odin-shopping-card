@@ -112,11 +112,17 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 	const historyList = history.map((element) => {
 		return (
 			<div key={element.id} className="historyItem">
-				<img src={element.image} alt="Item image" />
-				<h2>{element.title}</h2>
-				<p>{element.price}</p>
-				<p>Quantity: {element.quantity}</p>
-				<p>Total: {element.price * element.quantity}</p>
+				<div className="historyItemLeft">
+					<img src={element.image} alt="Item image" />
+				</div>
+				<div className="historyItemRight">
+					<h3>
+						{element.title} (x{element.quantity}) - ${element.price}
+					</h3>
+					<p>
+						Total: <strong>${element.price * element.quantity}</strong>
+					</p>
+				</div>
 			</div>
 		);
 	});
@@ -126,7 +132,7 @@ const Cart = ({ cart, setCart, balance, setBalance, history, setHistory }) => {
 			<h1>Cart</h1>
 			<div className="cart-section">
 				{cart.length > 0 && cartList}
-				{cart.length === 0 && <p>Cart is empty </p>}
+				{cart.length === 0 && <p>Cart is empty</p>}
 			</div>
 			{history.length > 0 && (
 				<div className="history-section">

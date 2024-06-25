@@ -128,7 +128,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .shopItem,
-.cartItem {
+.cartItem,
+.historyItem {
 	background-color: rgb(255, 255, 255);
 	color: #272727;
 	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
@@ -214,4 +215,24 @@ input[type='number']::-webkit-outer-spin-button {
 .content.cart {
 	height: 100%;
 	justify-content: space-between;
+}
+
+.history-section {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.historyItem {
+	padding: 16px;
+}
+
+.historyItemRight {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.historyItemRight h3 {
+	font-weight: 300;
 }
