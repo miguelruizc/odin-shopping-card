@@ -6,9 +6,13 @@ const Nav = ({ cart }) => {
 		<div className="nav">
 			<ul>
 				<li>
-					<Link to="/">Home</Link>
-					<Link to="/shop">Shop</Link>
-					<Link to="/cart">Cart({cart.length})</Link>
+					<Link to="/">HOME</Link>
+				</li>
+				<li>
+					<Link to="/shop">SHOP</Link>
+				</li>
+				<li>
+					<Link to="/cart">CART ({cart.length})</Link>
 				</li>
 			</ul>
 		</div>
