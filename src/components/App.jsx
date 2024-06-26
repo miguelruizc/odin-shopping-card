@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home.jsx';
 import Shop from './Shop.jsx';
 import Cart from './Cart.jsx';
@@ -17,7 +17,7 @@ function App() {
 			<Router>
 				<Nav cart={cart} />
 				<Routes>
-					<Route path="/odin-shopping-cart" element={<Home />}></Route>
+					<Route path="/" element={<Home />}></Route>
 					<Route path="/shop" element={<Shop cart={cart} setCart={setCart} />}></Route>
 					<Route
 						path="/cart"
