@@ -17,7 +17,7 @@ function App() {
 			<Router>
 				<Nav cart={cart} />
 				<Routes>
-					<Route path="/" element={<Home />}></Route>
+					<Route path="/odin-shopping-cart" element={<Home />}></Route>
 					<Route path="/shop" element={<Shop cart={cart} setCart={setCart} />}></Route>
 					<Route
 						path="/cart"

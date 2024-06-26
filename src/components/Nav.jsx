@@ -6,7 +6,7 @@ const Nav = ({ cart }) => {
 		<div className="nav">
 			<ul>
 				<li>
-					<Link to="/">HOME</Link>
+					<Link to="/odin-shopping-cart">HOME</Link>
 				</li>
 				<li>
 					<Link to="/shop">SHOP</Link>
