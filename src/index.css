@@ -309,4 +309,16 @@ input[type='number']::-webkit-outer-spin-button {
 	.addBalanceForm input {
 		max-width: 80px;
 	}
+
+	h2 {
+		font-size: 1.05em;
+	}
+
+	h3 {
+		font-size: 1em;
+	}
+
+	p {
+		font-size: 0.9em;
+	}
 }
